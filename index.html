@@ -1,0 +1,86 @@
+
+
+                <form id="form2">
+                    <h4 style="color: rgb(108, 108, 226);"><b>FREE SPARES</b></h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <td><input type="text" name="item" id="item"></td>
+                            </tr>
+                        </thead>
+
+
+                        <tbody>
+                            <tr>
+                                <th>Quantity</th>
+                                <td><input type="number" name="quantity" id="quantity"></td>
+                            </tr>
+
+
+
+
+                            <tr>
+                                <th>UOM</th>
+                                <td><input type="text" name="uom" id="uom"></td>
+                            </tr>
+                        </tbody><br><br>
+
+
+
+                        <div>
+                            <tr id="btna">
+                                <td>
+                                    <input type="button" name="button" id="btna" value="Add" onclick="AddRow()">
+                                </td>
+                            </tr>
+                        </div>
+                    </table>
+
+
+
+                    </table><br><br>
+                
+                    <table  class="table table-sm" border="2"  id="show">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Quantity</th>
+                                <th>UOM</th>
+                            </tr>
+                        </thead>
+
+                    </table><br><br>
+
+                
+
+                    <script>
+                        var list1 = [];
+                        var list2 = [];
+                        var list3 = [];
+
+                        var n = 1;
+                        var x = 0;
+
+                        function AddRow() {
+                            var AddRow = document.getElementById("show");
+                            var NewRow = AddRow.insertRow(n);
+
+                            list1[x] = document.getElementById("item").value;
+                            list2[x] = document.getElementById("quantity").value;
+                            list3[x] = document.getElementById("uom").value;
+
+                            var cel1 = NewRow.insertCell(0);
+                            var cel2 = NewRow.insertCell(1);
+                            var cel3 = NewRow.insertCell(2);
+
+
+                            cel1.innerHTML = list1[x];
+                            cel2.innerHTML = list2[x];
+                            cel3.innerHTML = list3[x];
+
+                            n++;
+                            x++;
+
+                        }
+                    </script>
